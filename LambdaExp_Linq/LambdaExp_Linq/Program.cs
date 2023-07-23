@@ -10,6 +10,7 @@ namespace LambdaExp_Linq
     {
         static void Main(string[] args)
         {
+            Management management = new Management();
             List<ProductReview> list = new List<ProductReview>()
             {
                 new ProductReview(){ ProductID = 1,UserID = 1, Rating=5, Review="Average",IsLike=true},
@@ -43,13 +44,16 @@ namespace LambdaExp_Linq
             {
                 Console.WriteLine("Please choose a option");
                 Console.WriteLine("1.Top 3 Ratings");
+                Console.WriteLine("2.Ratings greater than 3 by ProductID");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
                     case 1:
-                        Management management = new Management();
                         management.TopRecord(list);
                         Console.WriteLine("-------------------------------");
+                        break;
+                    case 2:
+                        management.ProductRating(list);                       
                         break;
                 }
             }
