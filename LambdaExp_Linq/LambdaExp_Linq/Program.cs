@@ -39,6 +39,20 @@ namespace LambdaExp_Linq
                 new ProductReview(){ ProductID = 6,UserID = 25, Rating=6, Review="Nice",IsLike=false},
 
             };
+            while(true)
+            {
+                Console.WriteLine("Please choose a option");
+                Console.WriteLine("1.Top 3 Ratings");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch(option)
+                {
+                    case 1:
+                        Management management = new Management();
+                        management.TopRecord(list);
+                        Console.WriteLine("-------------------------------");
+                        break;
+                }
+            }
         }
     }
 }
