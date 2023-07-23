@@ -17,6 +17,13 @@ namespace LambdaExp_Linq
             {
                 Console.WriteLine(prod.ProductID + "  " + prod.UserID + "  " + prod.Rating + "  " + prod.Review + "  " + prod.IsLike);
             }
+            Console.WriteLine("----------------");
+            var result = products.OrderByDescending(x => x.Rating).Take(3);
+            Console.WriteLine("Using Lambda:");
+            foreach(var prod in result)
+            {
+                Console.WriteLine(prod.ProductID + " " + prod.UserID + " " + prod.Rating + " " + prod.Review + "  " + prod.IsLike);
+            }
         }
     }
 }
