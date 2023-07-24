@@ -53,6 +53,12 @@ namespace LambdaExp_Linq
             {
                 Console.WriteLine(prod.ProductId + "  " + prod.Count);
             }
+            Console.WriteLine("Using Lambda: ");
+            var result = products.GroupBy(x => x.ProductID);
+            foreach (var product in result)
+            {
+                Console.WriteLine(product.Key + " " + product.Count());
+            }
         }
     }
 }
