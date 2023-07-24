@@ -100,6 +100,13 @@ namespace LambdaExp_Linq
             {
                 Console.WriteLine(product.ProductID + "  " + product.Review);
             }
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("Using LinQ: ");
+            var record = from product in products select new { product.ProductID, product.Review };
+            foreach (var product in record)
+            {
+                Console.WriteLine(product.ProductID + "  " + product.Review);
+            }
         }
     }
 }
