@@ -92,5 +92,14 @@ namespace LambdaExp_Linq
                 Console.WriteLine(prod1.ProductID + "  " + prod1.UserID + "  " + prod1.Rating + "  " + prod1.Review + "  " + prod1.IsLike);
             }
         }
+        public void ProductId_Reviews(List<ProductReview> products)
+        {
+            Console.WriteLine("Using Lambda: ");
+            var result = products.Select(x => new { x.ProductID, x.Review });
+            foreach (var product in result)
+            {
+                Console.WriteLine(product.ProductID + "  " + product.Review);
+            }
+        }
     }
 }

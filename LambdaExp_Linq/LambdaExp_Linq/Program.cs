@@ -48,6 +48,7 @@ namespace LambdaExp_Linq
                 Console.WriteLine("3.Count for each ProductID");
                 Console.WriteLine("4.Retrieve only productId & Review from list");
                 Console.WriteLine("5.Skip Top 5 Records from List");
+                Console.WriteLine("6.Retrieve only productId & Review from lis");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
@@ -68,6 +69,10 @@ namespace LambdaExp_Linq
                         break;
                     case 5:
                         management.SkipTop_Record(list);
+                        Console.WriteLine("-----------------------------");
+                        break;
+                    case 6:
+                        management.ProductId_Reviews(list);
                         Console.WriteLine("-----------------------------");
                         break;
                 }
