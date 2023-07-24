@@ -45,5 +45,14 @@ namespace LambdaExp_Linq
         //        Console.WriteLine(prod.ProductID + "  " + prod.UserID + "  " + prod.Rating + "  " + prod.Review + "  " + prod.IsLike);
         //    }
         //}
+        public void CountProduct(List<ProductReview> products)
+        {
+            var record = products.GroupBy(x => x.ProductID).Select(x => new { ProductId = x.Key, Count = x.Count() });
+            Console.WriteLine("Using LinQ: ");            
+            foreach (var prod in record)
+            {
+                Console.WriteLine(prod.ProductId + "  " + prod.Count);
+            }
+        }
     }
 }

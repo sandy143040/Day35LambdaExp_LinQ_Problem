@@ -45,6 +45,7 @@ namespace LambdaExp_Linq
                 Console.WriteLine("Please choose a option");
                 Console.WriteLine("1.Top 3 Ratings");
                 Console.WriteLine("2.Ratings greater than 3 by ProductID");
+                Console.WriteLine("3.Count for each ProductID");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
@@ -54,6 +55,10 @@ namespace LambdaExp_Linq
                         break;
                     case 2:
                         management.ProductRating(list);                       
+                        break;
+                    case 3:
+                        management.CountProduct(list);
+                        Console.WriteLine("-----------------------------");
                         break;
                 }
             }
