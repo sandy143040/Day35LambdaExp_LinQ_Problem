@@ -42,11 +42,12 @@ namespace LambdaExp_Linq
             };
             while(true)
             {
-                Console.WriteLine("Please choose a option");
+                Console.WriteLine("Please choose a option: ");
                 Console.WriteLine("1.Top 3 Ratings");
                 Console.WriteLine("2.Ratings greater than 3 by ProductID");
                 Console.WriteLine("3.Count for each ProductID");
                 Console.WriteLine("4.Retrieve only productId & Review from list");
+                Console.WriteLine("5.Skip Top 5 Records from List");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
@@ -63,6 +64,10 @@ namespace LambdaExp_Linq
                         break;
                     case 4:
                         management.ProductId_Review(list);
+                        Console.WriteLine("-----------------------------");
+                        break;
+                    case 5:
+                        management.SkipTop_Record(list);
                         Console.WriteLine("-----------------------------");
                         break;
                 }

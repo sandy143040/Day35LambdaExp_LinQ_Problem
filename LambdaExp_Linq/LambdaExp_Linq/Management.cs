@@ -76,5 +76,14 @@ namespace LambdaExp_Linq
                 Console.WriteLine(product.ProductID + "  " + product.Review);
             }
         }
+        public void SkipTop_Record(List<ProductReview> products)
+        {
+            var records = (from product in products select product).Skip(5);
+            Console.WriteLine("Using LinQ: ");
+            foreach (var prod in records)
+            {
+                Console.WriteLine(prod.ProductID + "  " + prod.UserID + "  " + prod.Rating + "  " + prod.Review + "  " + prod.IsLike);
+            }
+        }
     }
 }
