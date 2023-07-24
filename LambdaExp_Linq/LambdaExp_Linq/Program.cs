@@ -46,18 +46,23 @@ namespace LambdaExp_Linq
                 Console.WriteLine("1.Top 3 Ratings");
                 Console.WriteLine("2.Ratings greater than 3 by ProductID");
                 Console.WriteLine("3.Count for each ProductID");
+                Console.WriteLine("4.Retrieve only productId & Review from list");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
                     case 1:
                         management.TopRecord(list);
-                        Console.WriteLine("-------------------------------");
+                        Console.WriteLine("-----------------------------");
                         break;
                     case 2:
                         management.ProductRating(list);                       
                         break;
                     case 3:
                         management.CountProduct(list);
+                        Console.WriteLine("-----------------------------");
+                        break;
+                    case 4:
+                        management.ProductId_Review(list);
                         Console.WriteLine("-----------------------------");
                         break;
                 }
